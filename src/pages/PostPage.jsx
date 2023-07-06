@@ -27,7 +27,9 @@ const PostPage = () => {
     {
         state._id ?
         <>
+
         <img src={`https://sanjay-blog-app.onrender.com/${state.img}`} alt='img'/>
+        {/* <img src={`http://localhost:5000/${state.img}`} alt='img'/> */}
         <div>auth:{state.author.email}</div>
         {
         userInfo.id === state.author._id && (<Link to={`/edit/${id}`}>edit</Link>)
