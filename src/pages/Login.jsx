@@ -8,7 +8,6 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const {userInfo, setUserInfo} = useContext(UserContext)
-
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,13 +16,15 @@ const Login = () => {
       console.log(res)
       if(res.status === 210){
         setUserInfo(res.data)
+        console.log(userInfo)
+        console.log(res.data)
         navigate("/")
       }
     } catch (error) {
         console.log(error)
     }
   }
-  console.log(userInfo)
+  console.log("Ui",userInfo)
 
   return (
     <div>

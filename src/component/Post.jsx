@@ -6,8 +6,8 @@ const Post = (item) => {
   return (
     <div className="grid grid-cols-3 gap-2">
       <Link to={`/post/${item._id}`} className="col-span-1">
-        <img src={`https://sanjay-blog-app.onrender.com/${item.img}`} alt="" />{" "}
-        {/* <img src={`http://localhost:5000/${item.img}`} alt="" />{" "} */}
+
+        <img src={`http://localhost:5000/${item.img}`} alt="" />
       </Link>
       <Link to={`/post/${item._id}`} className="col-span-2">
         <div>{item.title}</div>

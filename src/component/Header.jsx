@@ -9,13 +9,13 @@ const Header = () => {
   const navigate = useNavigate()
 
 const {userInfo , setUserInfo} = useContext(UserContext)
-
+  console.log(userInfo)
   useEffect(() => {
     
     const myFun = async () => {
 
 
-    const res = await axios.get("/profile")
+    const res = await axios.get("/home")
     console.log(res);
     if(res.status === 200){
       console.log("resdata",res.data)
