@@ -17,7 +17,7 @@ useEffect(()=>{
 console.log(post)
 
   return (
-    <div className='p-3 m-3'>
+    <div className='p-5 bg-gray-300	'>
         {
            post.length > 0 && post.map((item) => {
               return(

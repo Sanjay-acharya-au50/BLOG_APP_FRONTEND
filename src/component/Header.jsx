@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
-
+import '../App.css'
 
 
 const Header = () => {
@@ -43,13 +43,14 @@ const {userInfo , setUserInfo} = useContext(UserContext)
 
 
   return (
-    <div className='flex justify-between px-10  py-3 border'>
-    <Link to='/'>SAN Blog</Link>
+    <div className='flex justify-between px-10  py-3 border bg-zinc-500 text-white	'>
+    <Link to='/' className='flex justify-center items-center logo'>SAN Blog</Link>
     <div>
 
     {
           userInfo?.id ? (
-        <div className='flex gap-2'>
+        <div className='flex gap-2 items-center'>
+      <p>{userInfo.name}</p>
       <Link to='/create'>create Post</Link> 
       <button className='bg-black text-white p-2 rounded ' onClick={handleLogout}>logout</button>
         </div>

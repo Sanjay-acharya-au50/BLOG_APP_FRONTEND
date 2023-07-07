@@ -3,13 +3,15 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 const Register = () => {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/register", {email,password})
+      const res = await axios.post("/register", {name,email,password})
       console.log(res)
       if(res.status === 200){
         navigate("/login");
@@ -25,6 +27,7 @@ const Register = () => {
     <div>
         <div>Register</div>
         <form onSubmit={handleRegister}>
+          <input type="text" name="" className='border' value={name} onChange={(e)=>setName(e.target.value)}/>
           <input type="text" name="" className='border' value={email} onChange={(e)=>setEmail(e.target.value)}/>
           <input type="password" name="" className='border' value={password} onChange={(e)=>setPassword(e.target.value)}/>
           <button className=' p-2 bg-black text-white'>Register</button>
