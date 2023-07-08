@@ -1,8 +1,12 @@
 import axios from 'axios'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 import '../App.css'
+import {  toast } from "react-toastify";
+
+
+
 
 
 const Header = () => {
@@ -19,6 +23,7 @@ const {userInfo , setUserInfo} = useContext(UserContext)
     console.log(res);
     if(res.status === 200){
       console.log("resdata",res.data)
+
       setUserInfo(res.data);
     }
   }
@@ -33,8 +38,9 @@ const {userInfo , setUserInfo} = useContext(UserContext)
     const logout = await axios.post("/logout")
     console.log(logout)
     if(logout.status === 200){ 
-
-      setUserInfo(null)
+      
+      setUserInfo("")
+      toast.success("oops!! bye bye!")
       navigate("/")
     }
 
@@ -43,31 +49,31 @@ const {userInfo , setUserInfo} = useContext(UserContext)
 
 
   return (
-    <div className='flex justify-between px-10  py-3 border bg-zinc-500 text-white	'>
-    <Link to='/' className='flex justify-center items-center logo'>SAN Blog</Link>
+    <div className='flex justify-between px-2 md:px-10  py-3 border bg-zinc-500 text-white	fontStyle'>
+    <Link to='/' className='flex justify-center items-center head '>SAN Blog</Link>
     <div>
 
     {
           userInfo?.id ? (
         <div className='flex gap-2 items-center'>
-      <p>{userInfo.name}</p>
-      <Link to='/create'>create Post</Link> 
-      <button className='bg-black text-white p-2 rounded ' onClick={handleLogout}>logout</button>
+      <Link to='/create' className='bg-black text-white text-[14px] md:text-[17px] p-2 rounded'>Create</Link> 
+      <button className='bg-black text-white text-[14px] md:text-[17px] p-2 rounded ' onClick={handleLogout}>Logout</button>
         </div>
       ) : (
 
         <>
-        <Link to='/login' className='m-2'>Login</Link>
-    <Link to='/register' className='m-2'>Register</Link>
+        <Link to='/login' className='m-1 bg-black text-white text-[14px] md:text-[17px] p-2 rounded '>Login</Link>
+    <Link to='/register' className='m-1 bg-black text-white text-[14px] md:text-[17px] p-2 rounded '>Register</Link>
         </>
   )
 }
 
 
     
+    </div>    
+      
     </div>
-
-    </div>
+    
   )
 }
 

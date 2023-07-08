@@ -1,8 +1,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Caveat:wght@500&display=swap');
 
-*{
+
+  @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@200&display=swap');
+
+.logo {
     font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.fontStyle{
+  font-family: 'Ysabeau Office', sans-serif;
 
 }
 
+.sum{
+    font-family: 'Sriracha', cursive;
+}
+
+.head{
+  font-family: 'Unbounded', cursive;
+}

@@ -33,8 +33,8 @@ const Edit = () => {
     }
 
   return (
-    <div className='flex justify-center m-5'>
-        <div className='w-[500px]'>
+    <div className='flex justify-center bg-gray-300 h-[100vh] items-center'>
+        <div className='w-[500px] bg-gray-100 p-5 rounded-xl'>
 
         <div className='text-center'>EditPost</div>
         <div>

@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../component/Footer';
+
 
 const CreatePost = () => {
     const [title, setTittle] = useState('')
@@ -30,8 +32,9 @@ const CreatePost = () => {
     }
 
   return (
-    <div className='flex justify-center m-5'>
-        <div className='w-[500px]'>
+    <>
+    <div className='flex flex-col justify-center items-center bg-gray-300 h-[100vh] fontStyle'>
+        <div className='w-[300px] md:w-[500px] bg-gray-100 p-5 rounded-xl'>
 
         <div className='text-center'>CreatePost</div>
         <div>
@@ -47,6 +50,8 @@ const CreatePost = () => {
         </div>
 
     </div>
+    <Footer/>
+        </>
   )
 }
 
