@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import Footer from '../component/Footer';
+import {  toast } from "react-toastify";
+
+
 const Register = () => {
   const navigate = useNavigate();
 
@@ -16,10 +19,14 @@ const Register = () => {
       console.log(res)
       if(res.status === 200){
         navigate("/login");
-        console.log("register succ")
+        // console.log("register succ")
+        toast.success("Registed")
       }
     } catch (error) {
         console.log(error)
+        toast.error(error.response.data)
+
+
     }
   }
 
@@ -33,9 +40,9 @@ const Register = () => {
 
         <div>Register</div>
         <form onSubmit={handleRegister} className='flex justify-center items-center flex-col w-[300px] h-[400px]'>
-          <input type="text" name="" className='w-[80%] p-2 m-1' placeholder='Name' value={name} onChange={(e)=>setName(e.target.value)}/>
-          <input type="text" name="" className='w-[80%] p-2 m-1' placeholder='Email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-          <input type="password" name="" className=' w-[80%] p-2 m-1' placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+          <input type="text" name="" className='w-[80%] p-2 m-1' placeholder='Name' required value={name} onChange={(e)=>setName(e.target.value)}/>
+          <input type="email" name="" className='w-[80%] p-2 m-1' placeholder='Email' value={email}  onChange={(e)=>setEmail(e.target.value)}/>
+          <input type="password" name="" className=' w-[80%] p-2 m-1' placeholder='Password' required value={password} onChange={(e)=>setPassword(e.target.value)}/>
           <button className=' p-2 bg-black text-white m-1  w-[80%]'>Register</button>
         </form>
         </div>

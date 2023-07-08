@@ -8,7 +8,7 @@ import '../App.css'
 import Footer from '../component/Footer'
 
 import "react-toastify/dist/ReactToastify.css";
-import {  toast } from "react-toastify";
+
 import Loading from '../component/Loading'
 
 
@@ -34,12 +34,6 @@ const PostPage = () => {
 
 
 
-      const notify = () =>
-
-      toast(
-          "there! My name is Sanjay, and I'm sorry to inform you that this page is still a work in progress and has not been completed yet. i'm working on it to bring you valuable content and a seamless user experience.!"
-        );
-
 
   return (
     <>
@@ -61,7 +55,7 @@ const PostPage = () => {
 
 <div className='font-bold text-[17px] md:text-[24px] m-2 fontStyle head text-center'>{state.title}</div>
 
-        <img src={`https://sanjay-blog-app.onrender.com/${state.img}`} className='m-2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-2xl' alt='img'/>
+        <img src={`https://sanjay-blog-app.vercel.app/${state.img}`} className='m-2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-2xl' alt='img'/>
         {
         userInfo.id === state.author._id && (<Link to={`/edit/${id}`} className='bg-black text-white p-2 w-[200px] text-center m-1 rounded-lg'>Edit</Link>)
     

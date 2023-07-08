@@ -39,9 +39,9 @@ const CreatePost = () => {
         <div className='text-center'>CreatePost</div>
         <div>
             <form onSubmit={handleSubmit} className='flex flex-col'>
-                <input type='text' className='border p-2 m-1'  onChange={(e)=>setTittle(e.target.value)} value={title} placeholder='Title'/>
-                <input type='summary' className='border p-2 m-1'  onChange={(e)=>setSummary(e.target.value)} value={sumamry} placeholder='Summary'/>
-                <input type='file' className='m-1' onChange={(e)=>setFiles(e.target.files)} />
+                <input type='text' className='border p-2 m-1'  required onChange={(e)=>setTittle(e.target.value)} value={title} placeholder='Title'/>
+                <input type='summary' className='border p-2 m-1' required  onChange={(e)=>setSummary(e.target.value)} value={sumamry} placeholder='Summary'/>
+                <input type='file' className='m-1' required onChange={(e)=>setFiles(e.target.files)} />
                 <ReactQuill className=' m-1' onChange={(e)=>setQuill(e)} value={quill}/>
                 <button  className='border p-2 m-1 bg-black text-white'>Create Post</button>
 
