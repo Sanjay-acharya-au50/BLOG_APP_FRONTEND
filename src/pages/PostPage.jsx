@@ -60,7 +60,7 @@ const PostPage = () => {
         userInfo.id === state.author._id && (<Link to={`/edit/${id}`} className='bg-black text-white p-2 w-[200px] text-center m-1 rounded-lg'>Edit</Link>)
     
         }
-        <div className='font-bold fontStyle head'><span className='fsB'> Author :</span> {state.author.email}</div>
+        <div className='font-bold fontStyle head'><span className='fsB'> Author : </span>{state.author.name}</div>
 
         <p className='font-bold text-gray-500 head text-[11px]'>{formatISO9075(new Date(state.createdAt))}</p>
 

@@ -34,7 +34,7 @@ const IndexPage = () => {
 
        <div className="bg-primary text-white flex items-center justify-center border">
           <p className="uppercase text-xs tracking-widest text-center px-4 py-3">
-            Welcome, { userInfo.name } Explore, Create, and Share with our
+            Welcome, { userInfo.name } !! Explore, Create, and Share with our
             easy-to-use platform. Click 'Create' in the navbar to start crafting
             your own blogs!
           </p>
