@@ -26,13 +26,17 @@ const Edit = () => {
         data.set("quill", quill)
         data.set("id", id)
 
+       try {
         const res = await axios.put(`/edit/${id}`,
-            data
-        )
-        console.log(res)
-        if(res.status === 200){
-            navigate(`/post/${id}`)
-        }
+        data
+    )
+    console.log(res)
+    if(res.status === 200){
+        navigate(`/post/${id}`)
+    }
+       } catch (error) {
+        console.log('err::',error)
+       }
     }
 
 
