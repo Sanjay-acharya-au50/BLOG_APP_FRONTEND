@@ -21,14 +21,17 @@ const CreatePost = () => {
         data.set("sumamry", sumamry)
         data.set("files", files[0])
         data.set("quill", quill)
-
+     try {
         const res = await axios.post("/post",
-            data
-        )
-        console.log(res)
-        if(res.status === 200){
-            navigate("/")
-        }
+        data
+    )
+    console.log(res)
+    if(res.status === 200){
+        navigate("/")
+    }
+     } catch (error) {
+        console.log(error)
+     }
     }
 
   return (

@@ -11,7 +11,7 @@ const Post = (item) => {
       <Link to={`/post/${item._id}`} className="col-span-1 flex justify-center items-center w-full h-full  ">
         {/* http://localhost:5000 */}
         {/* https://sanjay-blog-app.onrender.com */}
-        <img src={`https://sanjay-blog-app.onrender.com/${item.img}`} className="h-[300px] w-[300px] rounded-lg m-2" alt="" />
+        <img src={item.img} className="h-[300px] w-[300px] rounded-lg m-2" alt="" />
       </Link>
       <Link to={`/post/${item._id}`} className="col-span-2 flex justify-center  flex-col w-full h-full  ">
         <div>Title : {item.title}</div>
