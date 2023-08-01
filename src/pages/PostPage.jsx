@@ -11,9 +11,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Loading from '../component/Loading'
 
-
-
-
 const PostPage = () => {
     const {userInfo} = useContext(UserContext)
     console.log(userInfo)
@@ -31,17 +28,8 @@ const PostPage = () => {
         myFun()
     },[])
     console.log(state)
-
-
-
-
   return (
     <>
-
-
-
-
-
     {
       
       state._id ?
